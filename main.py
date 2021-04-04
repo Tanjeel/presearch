@@ -14,8 +14,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import random
 
-# TODO: 3 Make a Long List of keyword
-all_keys = ["username", "password", "country", "income", "funny"]
+# TODO: 3 Make a Long List of keyword or sentence
+all_keys = ["username", "password", "country", "income", "funny", "what is hollow world", "how to enable chrome extension", "what is GUI", "backbenchers"]
 
 chrome_options = Options()
 chrome_options.add_argument("--user-data-dir=chrome-data")
@@ -56,14 +56,14 @@ while True:
     for i in range(len(prev_search_key)):
         actions.send_keys(Keys.BACK_SPACE)
 
-    time.sleep(4)
+    time.sleep(10)
     search_key = random.choice(all_keys)
     print(search_key)
     actions.send_keys(search_key)
     actions.send_keys(Keys.ENTER)
     actions.perform()
     prev_search_key = search_key
-    time.sleep(4)
+    time.sleep(10)
 
 # TODO: 1 Click the search resust to make it more human
 
