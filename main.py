@@ -1,5 +1,5 @@
 #   Copyright (c) 2021.
-#   Version : 1.0.2
+#   Version : 0.0.1
 #   Script Author : Sushen Biswas
 #
 #   Sushen Biswas Github Link : https://github.com/sushen
@@ -14,21 +14,20 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
 import random
 
-#TODO: Make a Long List of keyword
-all_keys = ["username","password","country","income","funny"]
-
+# TODO: 3 Make a Long List of keyword
+all_keys = ["username", "password", "country", "income", "funny"]
 
 chrome_options = Options()
 chrome_options.add_argument("--user-data-dir=chrome-data")
 chrome_options.add_argument("--start-maximized")
 # chrome_options.add_argument("--incognito")
 
-driver = webdriver.Chrome("./chromedriver.exe",chrome_options=chrome_options)
+driver = webdriver.Chrome("./chromedriver.exe", chrome_options=chrome_options)
 chrome_options.add_argument("user-data-dir=chrome-data")
 driver.implicitly_wait(25)  # seconds
 # What will be searched
 
-actions = ActionChains(driver) 
+actions = ActionChains(driver)
 
 # Time waiting for page
 waiting_for_page = 10
@@ -36,7 +35,7 @@ waiting_for_page = 10
 driver.get("https://engine.presearch.org")
 time.sleep(2)
 
-#TODO: Make a login strong system in environment veriable
+# TODO: 2 Make a login strong system in environment veriable
 print(input("Enter your Username and Password Menually then enter 1: "))
 driver.get("https://presearch.org")
 # print(input("Enter your Username and Password Menually then enter 1: "))
@@ -53,7 +52,7 @@ actions.perform()
 time.sleep(20)
 prev_search_key = search_key
 
-while True :
+while True:
     for i in range(len(prev_search_key)):
         actions.send_keys(Keys.BACK_SPACE)
 
@@ -65,9 +64,8 @@ while True :
     actions.perform()
     prev_search_key = search_key
     time.sleep(4)
-   
-#TODO: Click the search resust to make it more human
 
+# TODO: 1 Click the search resust to make it more human
 
 
 # driver.find_element_by_id("token-animation").click()
@@ -83,4 +81,4 @@ while True :
 
 time.sleep(5)
 
-driver.quit()
+# driver.quit()
